@@ -1,0 +1,44 @@
+import pandas as pd
+
+# Create the data for the markdown features
+data = {
+    "Feature": [
+        "H1 Heading", "H2 Heading", "H3 Heading", "H4 Heading", "H5 Heading", "H6 Heading",
+        "Bold Text", "Italic Text", "Strikethrough",
+        "Unordered List", "Ordered List",
+        "Links", "Images", "Blockquotes",
+        "Inline Code", "Python Code Example", "HTML Code Example", "JavaScript Code Example",
+        "Tables", "Task Lists", "Emojis", "Highlighted Text", "HTML in Markdown", 
+        "Tables with Alignment", "Definition Lists", "Abbreviations", "Line Breaks", "Footnotes",
+        "Mathematical Expressions (LaTeX)", "Automatic Links"
+    ],
+    "Markdown Syntax": [
+        "# H1 Heading", "## H2 Heading", "### H3 Heading", "#### H4 Heading", "##### H5 Heading", "###### H6 Heading",
+        "**Bold text** or __Bold text__", "*Italic text* or _Italic text_", "~~Strikethrough~~",
+        "- Unordered list item 1\n- Unordered list item 2", "1. Ordered list item 1\n2. Ordered list item 2",
+        "[Link text](https://example.com)", "![Alt text](https://example.com/image.jpg)", 
+        "> This is a blockquote.",
+        "`inline code`", 
+        "```python\nfor i in range(1, 6):\n    print(f'Number {i}')\n```", 
+        "```html\n<!DOCTYPE html>\n<html>\n  <body>\n    <h1>This is a heading</h1>\n  </body>\n</html>\n```", 
+        "```javascript\nlet greeting = 'Hello, World!';\nconsole.log(greeting);\n```",
+        "| Header 1 | Header 2 |\n|----------|----------|\n| Cell 1   | Cell 2   |",
+        "- [ ] Task 1\n- [x] Task 2", 
+        ":rocket: :tada: :100:", "==Highlighted Text==", "<p>This is an HTML paragraph inside Markdown!</p>",
+        "| Left-aligned | Center-aligned | Right-aligned |\n|:-------------|:--------------:|--------------:|\n| Cell 1       |    Cell 2       |       Cell 3  |",
+        "Term 1  \n: Definition 1", "*[HTML]: Hyper Text Markup Language",
+        "This sentence ends here.  \nThis sentence is on a new line.",
+        "Here is a footnote reference.[^1]\n[^1]: This is the footnote.",
+        "`\(E = mc^2\)`\n\n```\n\\[\n\\frac{d}{dx} (x^2 + y^2) = 2x + 2y\n\\]\n```",
+        "https://example.com"
+    ]
+}
+
+# Convert to DataFrame
+df = pd.DataFrame(data)
+
+# Save to Excel
+file_path = "markdown_reference_sheet.xlsx"
+df.to_excel(file_path, index=False)
+
+print(f"Markdown reference sheet saved to {file_path}")
